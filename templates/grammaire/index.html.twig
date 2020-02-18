@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GrammaireController!{% endblock %}
+
+{% block body %}
+
+<h1 class="text-center m-4">GRAMMAIRE</h1>
+
+        <table class="table table-striped">
+            <thead>
+            <tr class="text-info">
+                <th scope="col">Nom/Prénom</th>
+                {% for belt in competenceBelts %}
+                    <th scope="col">{{ belt.color}}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for student in students %}
+                <tr>
+                    <th scope="row">{{ student.name }} {{ student.firstname }}</th>
+                    <td>
+                        <select class="form-control">
+                            <option>En attente</option>
+                            <option>Réussi</option>
+                            <option>Raté</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control">
+                            <option>En attente</option>
+                            <option>Réussi</option>
+                            <option>Raté</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control">
+                            <option>En attente</option>
+                            <option>Réussi</option>
+                            <option>Raté</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control">
+                            <option>En attente</option>
+                            <option>Réussi</option>
+                            <option>Raté</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control">
+                            <option>En attente</option>
+                            <option>Réussi</option>
+                            <option>Raté</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control">
+                            <option>En attente</option>
+                            <option>Réussi</option>
+                            <option>Raté</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control">
+                            <option>En attente</option>
+                            <option>Réussi</option>
+                            <option>Raté</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control">
+                            <option>En attente</option>
+                            <option>Réussi</option>
+                            <option>Raté</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control">
+                            <option>En attente</option>
+                            <option>Réussi</option>
+                            <option>Raté</option>
+                        </select>
+                    </td>
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+        </table>
+
+<div class="row">
+
+    <div class="col-2 offset-5">
+        <button type="button" class="btn btn-warning btn-lg">Valider</button>
+    </div>
+</div>
+
+
+{% endblock %}
