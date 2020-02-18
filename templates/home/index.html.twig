@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+        <div class="row mt-5">
+            {% for domain in domains %}
+                            <div class="col-sm-4">
+                                    <div class="card m-3 bg-info text-white">
+                                            <div class="card-body ">
+                                                    <h5 class="card-text text-center">{{ domain.name|upper }}</h5>
+                                            </div>
+                                    </div>
+                            </div>
+            {% endfor %}
+            <div class="col-sm-4">
+                <div class="card m-3 bg-warning">
+                    <div class="card-body">
+                        <h5 class="card-text text-center">COMPORTEMENT</h5>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+
+{% endblock %}
