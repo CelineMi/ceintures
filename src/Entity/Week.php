@@ -21,6 +21,32 @@ class Week
      */
     private $number;
 
+    /**
+     * @return mixed
+     */
+    public function getWeekStart()
+    {
+        return $this->weekStart;
+    }
+
+    /**
+     * @param mixed $weekStart
+     */
+    public function setWeekStart($weekStart): void
+    {
+        $this->weekStart = $weekStart;
+    }
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $weekStart;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $weekEnd;
+
     public function getId(): ?int
     {
         return $this->id;

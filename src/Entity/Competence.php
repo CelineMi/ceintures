@@ -34,10 +34,15 @@ class Competence
     private $competenceBeltId;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Status")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="boolean")
      */
-    private $statusId;
+    private $status;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $evaluatedAt;
+
 
     public function getId(): ?int
     {
@@ -80,15 +85,33 @@ class Competence
         return $this;
     }
 
-    public function getStatusId(): ?Status
+    public function getStatus(): ?Status
     {
-        return $this->statusId;
+        return $this->status;
     }
 
-    public function setStatusId(?Status $statusId): self
+    public function setStatus(?Status $status): self
     {
-        $this->statusId = $statusId;
+        $this->status = $status;
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getEvaluatedAt()
+    {
+        return $this->evaluatedAt;
+    }
+
+    /**
+     * @param mixed $evaluatedAt
+     */
+    public function setEvaluatedAt($evaluatedAt): void
+    {
+        $this->evaluatedAt = $evaluatedAt;
+    }
+
+
 }
