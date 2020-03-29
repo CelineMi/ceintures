@@ -66,7 +66,55 @@ class User
     /**
      * @return mixed
      */
-    public function getEmail()
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param mixed $createdAt
+     */
+    public function setCreatedAt($createdAt): void
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param mixed $updatedAt
+     */
+    public function setUpdatedAt($updatedAt): void
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSeenAt()
+    {
+        return $this->seenAt;
+    }
+
+    /**
+     * @param mixed $seenAt
+     */
+    public function setSeenAt($seenAt): void
+    {
+        $this->seenAt = $seenAt;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail(): ?string
     {
         return $this->email;
     }
@@ -74,18 +122,19 @@ class User
     /**
      * @param mixed $email
      */
-    public function setEmail($email): void
+    public function setEmail($email): self
     {
         $this->email = $email;
+        return $this;
     }
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updatedAt;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $seenAt;
 
