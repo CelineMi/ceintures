@@ -14,12 +14,16 @@
                     <th scope="col">{{ belt.color}}</th>
                 {% endfor %}
             </tr>
+            <tr>
+                <th scope="col">sous domaines</th>
+                {% for subDomain in subDomains %}
+                    <th scope="col">{{ subDomain.name}}</th>
+                {% endfor %}
+            </tr>
             </thead>
             <tbody>
-
-            {% for student in students %}
                 <tr>
-                    <th scope="row">{{ student.name }} {{ student.firstname }}</th>
+                    <th scope="row">Emile Louis</th>
                     <td>
                         <select class="form-control">
                             <option>En attente</option>
@@ -82,20 +86,12 @@
                             <option>Réussi</option>
                             <option>Raté</option>
                         </select>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-warning btn-lg">Valider</button>
                     </td>
                 </tr>
-
-            {% endfor %}
-
             </tbody>
         </table>
-
-<div class="row">
-
-    <div class="col-2 offset-5">
-        <button type="button" class="btn btn-warning btn-lg">Valider</button>
-    </div>
-</div>
-
 
 {% endblock %}

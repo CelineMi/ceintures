@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Status;
+use App\Entity\SubDomain;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
- * @method Status|null find($id, $lockMode = null, $lockVersion = null)
- * @method Status|null findOneBy(array $criteria, array $orderBy = null)
- * @method Status[]    findAll()
- * @method Status[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method SubDomain|null find($id, $lockMode = null, $lockVersion = null)
+ * @method SubDomain|null findOneBy(array $criteria, array $orderBy = null)
+ * @method SubDomain[]    findAll()
+ * @method SubDomain[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class StatusRepository extends ServiceEntityRepository
+class SubDomainRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Status::class);
+        parent::__construct($registry, SubDomain::class);
     }
 
     // /**
-    //  * @return Status[] Returns an array of Status objects
+    //  * @return SubDomain[] Returns an array of SubDomain objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class StatusRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Status
+    public function findOneBySomeField($value): ?SubDomain
     {
         return $this->createQueryBuilder('s')
             ->andWhere('s.exampleField = :val')

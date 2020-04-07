@@ -2,14 +2,21 @@
 
 namespace App\Controller;
 
+use App\Entity\CompetenceBelt;
 use App\Entity\User;
+use App\Repository\SubDomainRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\UserRepository;
 use App\Repository\CompetenceBeltRepository;
-use App\Repository\StatusRepository;
 use App\Repository\CompetenceRepository;
 
+
+/**
+ * Class GrammaireController
+ * @package App\Controller
+ * @Route("/grammaire")
+ */
 class GrammaireController extends AbstractController
 {
 
@@ -20,30 +27,37 @@ class GrammaireController extends AbstractController
 
     public function __construct(UserRepository $userRepository,
                                 CompetenceBeltRepository $competenceBeltRepository,
-                                StatusRepository $statusRepository,
-                                CompetenceRepository $competenceRepository
+                                CompetenceRepository $competenceRepository,
+                                SubDomainRepository $subDomainRepository
                                 )
     {
         $this->userRepository = $userRepository;
         $this->competenceBeltRepository = $competenceBeltRepository;
-        $this->statusRepository = $statusRepository;
         $this->competenceRepository = $competenceRepository;
+        $this->subDomainRepository = $subDomainRepository;
     }
 
     /**
-     * @Route("/grammaire", name="grammaire")
+     * @Route("/", name="grammaire")
      */
     public function index()
     {
         $student = $this->userRepository->findByRole('student');
         $competenceBelt = $this->competenceBeltRepository->findAll();
-//        $status = $this->competenceRepository->find(1);
-//        var_dump($status);
-//        exit();
+        $subDomain = $this->subDomainRepository->findAll();
         return $this->render('grammaire/index.html.twig', [
             'students' => $student,
             'competenceBelts' => $competenceBelt,
-//            'status' => $status
+            'subDomains' => $subDomain,
         ]);
     }
+
+    /**
+     * @Route("/update/{id}", name="updateGrammaireStudent")
+     */
+    public function update()
+    {
+        // mise à jour d'un élève via le bouton valider
+    }
+
 }

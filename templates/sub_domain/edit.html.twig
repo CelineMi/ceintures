@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit SubDomain{% endblock %}
+
+{% block body %}
+    <h1>Edit SubDomain</h1>
+
+    {{ include('sub_domain/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('sub_domain_index') }}">back to list</a>
+
+    {{ include('sub_domain/_delete_form.html.twig') }}
+{% endblock %}
